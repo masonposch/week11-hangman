@@ -4,7 +4,8 @@
 var randomWords = require('random-words');
 
 
+var randomWord = function(){
+ console.log(randomWords());
+}
 
-var randomWord = randomWords();
-
-exports.randomWord;
+module.exports.randomWord = randomWord;

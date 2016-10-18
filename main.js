@@ -9,14 +9,14 @@
 
 var inquirer = require('inquirer');
 
+var word = require('./game.js');
+
 var number = 10;
 
 //------------------------------------------------------------------------------------------------------
 
 
+//FOR REAL Runs the function from game.js that chooses the random word
+word.randomWord();
 
 
-
-
-// //Runs the function from game.js that chooses the random word
-// var word = require('./game.js');
