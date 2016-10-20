@@ -10,9 +10,12 @@
 
 		//create new object with constructor based off of the random word chosen
 
-
+//GLOBAL VARIABLES
 
 var inquirer = require('inquirer');
+
+var numberOfGuesses = 10;
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 //TURN THE WORD INTO AN ARRAY
@@ -55,6 +58,30 @@ function guess(){
 		}
 
 	]).then(function(user){
+
+		for(var i=0; i < gameWord.length; i++){
+			if(user.guess === gameWord[i]){
+				console.log('good guess');
+				numberOfGuesses--;
+				//Push correct user guess into an array within letter.js
+				console.log(numberOfGuesses);
+				if(numberOfGuesses > 0){
+					guess();
+				}
+				else {
+					console.log('Nice game');
+					return false;
+				}
+			} 
+			// else if (user.guess !== gameWord[i]){
+			// 	console.log('you suck');
+			// 	numberOfGuesses--;
+			// 	console.log(numberOfGuesses);
+			// 	if(numberOfGuesses > 0){
+			// 		guess();
+			// 	}
+			// }
+		}
 
 	});// end THEN promise
 
