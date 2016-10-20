@@ -13,10 +13,17 @@ var word = require('./game.js');
 
 var number = 10;
 
+
 //------------------------------------------------------------------------------------------------------
 
 
 //FOR REAL Runs the function from game.js that chooses the random word
-word.randomWord();
+var test = word.randomWord();
+
+console.log(test);
+
+
+
+
 
 
