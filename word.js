@@ -3,13 +3,6 @@
 //which will check the letters guessed versus the random word selected.
 
 
-//psuedo code:
-		//Turn word into an array
-		//create constructor that checks user guess against the array
-		//export results of constructor to letter.js
-
-		//create new object with constructor based off of the random word chosen
-
 //GLOBAL VARIABLES
 
 var inquirer = require('inquirer');
@@ -32,8 +25,11 @@ console.log(gameWord);
 //Turns random word into an array
 var gameWord = gameWord.split('');
 
+exports.gameWord = gameWord;
+
 console.log(gameWord);
 
+guess();
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -45,6 +41,7 @@ console.log(gameWord);
 /////////////////////////////////////////////////////////////////////////////////////////////////
 //INQUIRE USER INPUT
 /////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
 function guess(){
@@ -69,23 +66,30 @@ function guess(){
 					guess();
 				}
 				else {
-					console.log('Nice game');
+					console.log("Sorry, game over.");
 					return false;
 				}
-			} 
-			// else if (user.guess !== gameWord[i]){
-			// 	console.log('you suck');
-			// 	numberOfGuesses--;
-			// 	console.log(numberOfGuesses);
-			// 	if(numberOfGuesses > 0){
-			// 		guess();
-			// 	}
-			// }
+			}
 		}
 
 	});// end THEN promise
 
 }//End guess function
 
-guess();
+
+
+
+// function wrongGuess(){
+// 	return
+// 	console.log("Sorry, that is incorrect");
+// 	numberOfGuesses--;
+// 	console.log(numberOfGuesses);
+// 	guess();
+
+// }//End wrongGuess function
+
+
+
+
+
 

@@ -3,17 +3,17 @@
 //whether or not a letter appears as a "_" or as itself on-screen.
 
 
-//STORES THE RANDOM WORD
 var word = require('./game.js');
 
 var gameWord = word.randomWord();
 
-console.log(gameWord);
+var wordArray = require('./word.js');
 
-//Turns random word into an array
-var gameWord = gameWord.split('');
+var test = wordArray.gameWord;
 
-console.log(gameWord);
+console.log(test);
+
+
 
 
 
