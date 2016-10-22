@@ -7,51 +7,37 @@ var word = require('./game.js');
 
 var gameWord = word.randomWord();
 
-var wordArray = require('./word.js');
-
-var test = wordArray.gameWord;
-
-console.log(test);
+var gameWordArray;
 
 
 
 
+//DO LETTER.JS
+
+//THEN WORD.JS
+
+//THEN MAIN.JS
 
 
 
+function RandomWord(){
+	this.blanked = function(){
+		var gameWordHidden = [];
+		var gameWordArray = gameWord.split('');
+		console.log(gameWordArray);
+		for(var i=0; i < gameWordArray.length; i++){
+			gameWordHidden.push('_ ');
+			console.log(gameWordHidden);
+		}
+	},
 
+	this.array = function(){
+		var gameWordArray = gameWord.split('');
+		console.log(gameWordArray);
+	}
+}
 
+var test = new RandomWord();
 
+test.blanked();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Runs the function from game.js that chooses the random word
-// function letterGuess(word){
-// 	this.correct = function(){
-// 		var splitWord = word.split('');
-// 		for(var i=0; i<splitWord.length; i++){
-// 			if()
-// 		}
-// 	}
-// }

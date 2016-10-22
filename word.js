@@ -22,6 +22,8 @@ var gameWord = word.randomWord();
 
 console.log(gameWord);
 
+var gameWord = gameWord.replace(/[^a-zA-Z0-9]/g,'_');
+
 //Turns random word into an array
 var gameWord = gameWord.split('');
 
