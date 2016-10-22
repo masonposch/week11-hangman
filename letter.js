@@ -27,8 +27,8 @@ function RandomWord(){
 		console.log(gameWordArray);
 		for(var i=0; i < gameWordArray.length; i++){
 			gameWordHidden.push('_ ');
-			console.log(gameWordHidden);
 		}
+		console.log(gameWordHidden);
 	},
 
 	this.array = function(){
