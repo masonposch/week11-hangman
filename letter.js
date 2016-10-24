@@ -20,24 +20,24 @@ var gameWordArray;
 
 
 
-function RandomWord(){
+exports.RandomWord = function(){
 	this.blanked = function(){
 		var gameWordHidden = [];
 		var gameWordArray = gameWord.split('');
-		console.log(gameWordArray);
+		// return gameWordArray;
 		for(var i=0; i < gameWordArray.length; i++){
 			gameWordHidden.push('_ ');
 		}
-		console.log(gameWordHidden);
+		return gameWordHidden;
 	},
 
 	this.array = function(){
 		var gameWordArray = gameWord.split('');
-		console.log(gameWordArray);
+		return gameWordArray;
 	}
 }
 
-var test = new RandomWord();
+var test = new exports.RandomWord();
 
 test.blanked();
 

@@ -9,29 +9,27 @@ var inquirer = require('inquirer');
 
 var numberOfGuesses = 10;
 
+var guessed = [];
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
-//TURN THE WORD INTO AN ARRAY
+////STORES THE RANDOM WORD AS A GLOBAL VARIABLE
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-//STORES THE RANDOM WORD
-var word = require('./game.js');
+var word = require('./letter.js');
 
-var gameWord = word.randomWord();
+var gameWord = word.RandomWord();
 
-console.log(gameWord);
+var test = new word.RandomWord();
 
-var gameWord = gameWord.replace(/[^a-zA-Z0-9]/g,'_');
+var gameWordBlanks = test.blanked();
 
-//Turns random word into an array
-var gameWord = gameWord.split('');
+var gameWordArray = test.array();
 
-exports.gameWord = gameWord;
+console.log(gameWordArray);
 
-console.log(gameWord);
-
-guess();
+console.log(gameWordBlanks);
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -40,55 +38,6 @@ guess();
 
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////
-//INQUIRE USER INPUT
-/////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-function guess(){
-
-	inquirer.prompt([
-
-		{
-				type: "input",
-				message: "Please guess a letter",
-				name: "guess"
-		}
-
-	]).then(function(user){
-
-		for(var i=0; i < gameWord.length; i++){
-			if(user.guess === gameWord[i]){
-				console.log('good guess');
-				numberOfGuesses--;
-				//Push correct user guess into an array within letter.js
-				console.log(numberOfGuesses);
-				if(numberOfGuesses > 0){
-					guess();
-				}
-				else {
-					console.log("Sorry, game over.");
-					return false;
-				}
-			}
-		}
-
-	});// end THEN promise
-
-}//End guess function
-
-
-
-
-// function wrongGuess(){
-// 	return
-// 	console.log("Sorry, that is incorrect");
-// 	numberOfGuesses--;
-// 	console.log(numberOfGuesses);
-// 	guess();
-
-// }//End wrongGuess function
 
 
 
