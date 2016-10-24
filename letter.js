@@ -11,20 +11,10 @@ var gameWordArray;
 
 
 
-
-//DO LETTER.JS
-
-//THEN WORD.JS
-
-//THEN MAIN.JS
-
-
-
 exports.RandomWord = function(){
 	this.blanked = function(){
 		var gameWordHidden = [];
 		var gameWordArray = gameWord.split('');
-		// return gameWordArray;
 		for(var i=0; i < gameWordArray.length; i++){
 			gameWordHidden.push('_ ');
 		}
