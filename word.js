@@ -41,7 +41,23 @@ console.log(gameWordBlanks);
 ////STORES THE RANDOM WORD AS A GLOBAL VARIABLE
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
+inquirer.prompt([
 
+	{
+		type: "input",
+		message: "Guess a letter",
+		name: "question"
+	}
+
+]).then(function(user){
+
+	numberOfGuesses--;
+	console.log(numberOfGuesses);
+
+	guessed.push(user.question);
+	console.log(guessed);
+
+})
 
 
 
