@@ -57,6 +57,14 @@ inquirer.prompt([
 	guessed.push(user.question);
 	console.log(guessed);
 
+	for(var i=0; i < gameWordArray.length; i++){
+		
+		if(user.question === gameWordArray[i]){
+			console.log("Yes");
+		}
+		
+	}
+
 })
 
 
