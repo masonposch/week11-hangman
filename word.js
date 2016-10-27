@@ -35,38 +35,45 @@ console.log(gameWordBlanks);
 /////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+getUserGuess();
 
 /////////////////////////////////////////////////////////////////////////////////////////////////
 ////STORES THE RANDOM WORD AS A GLOBAL VARIABLE
 /////////////////////////////////////////////////////////////////////////////////////////////////
 
-inquirer.prompt([
+function getUserGuess(){
 
-	{
-		type: "input",
-		message: "Guess a letter",
-		name: "question"
-	}
+	inquirer.prompt([
 
-]).then(function(user){
-
-	numberOfGuesses--;
-	console.log(numberOfGuesses);
-
-	guessed.push(user.question);
-	console.log(guessed);
-
-	for(var i=0; i < gameWordArray.length; i++){
-		
-		if(user.question === gameWordArray[i]){
-			console.log("Yes");
+		{
+			type: "input",
+			message: "Guess a letter",
+			name: "question"
 		}
-		
-	}
 
-})
+	]).then(function(user){
 
+		if(numberOfGuesses <= 0){
+			return;
+		}
+
+		numberOfGuesses--;
+		console.log(numberOfGuesses);
+
+		guessed.push(user.question);
+		console.log(guessed);
+
+		for(var i=0; i < gameWordArray.length; i++){
+			
+			if(user.question === gameWordArray[i]){
+				console.log("Yes");
+			}
+
+		}
+		getUserGuess();
+	});
+
+}
 
 
 
